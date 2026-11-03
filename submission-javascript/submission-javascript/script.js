@@ -1,3 +1,4 @@
+
 // ==============================================================================
 //                    PROJECT SUBMISSION JAVASCRIPT (KELAS 10A)
 //                     KUMPULAN SOAL CERITA & STUDI KASUS
@@ -139,6 +140,14 @@ alert("Umur Anda saat ini adalah: " + umurUser + " tahun");
 // Diberikan variabel `kodeTransaksi` = 1205. Ubah variabel tersebut menjadi string menggunakan .toString() lalu gabungkan dengan teks "TRX-", sehingga menjadi "TRX-1205".
 // Diberikan juga variabel `stringHarga` = "45000". Ubah menjadi number menggunakan Number(), lalu tambahkan dengan 5000 (biaya admin). Cetak total akhir ke console!
 
+let kodeTransaksi = 1205;
+let kodeTransaksiString = "TRX-" + kodeTransaksi.toString();
+console.log(kodeTransaksiString);
+
+let stringHarga = "45000";
+let totalHarga = Number(stringHarga) + 5000;
+console.log(totalHarga);
+
 // Soal 3.2 (Studi Kasus: Validasi Nilai Truthy dan Falsy):
 // Buat pengecekan boolean dengan Boolean() untuk 5 nilai berikut di console:
 // 1. Boolean(0)
@@ -148,13 +157,13 @@ alert("Umur Anda saat ini adalah: " + umurUser + " tahun");
 // 5. Boolean(100)
 // Tuliskan di console apakah masing-masing bernilai true (Truthy) atau false (Falsy)!
 
-let kodeTransaksi = 1205;
-let kodeTransaksiString = "TRX-" + kodeTransaksi.toString();
-console.log(kodeTransaksiString);
+let kodeTransaksi2 = 1205;
+let kodeTransaksi2String = "TRX-" + kodeTransaksi2.toString();
+console.log(kodeTransaksi2String);
 
-let stringHarga = "45000";
-let totalHarga = Number(stringHarga) + 5000;
-console.log(totalHarga);
+let stringHarga2 = "45000";
+let totalHarga2 = Number(stringHarga2) + 5000;
+console.log(totalHarga2);
 
 // Soal 3.3 (Studi Kasus: Belanja di Koperasi Sekolah - Operator Aritmatika):
 // Siti membeli 4 buah buku tulis seharga Rp 5.000 per buku dan 2 buah pulpen seharga Rp 3.000 per pulpen.
@@ -223,17 +232,39 @@ console.log(skorA !== skorB);
 // Diketahui Rian berusia 18 tahun dan nilai lulusPraktek bernilai true.
 // Tentukan apakah Rian berhak mendapatkan SIM menggunakan operator && dan simpan hasilnya di variabel `dapatSim`!
 
+let usiaRian = 18;
+let lulusPraktek = true;
+
+let dapatSim = (usiaRian >= 17) && lulusPraktek;
+console.log("Apakah Rian berhak mendapatkan SIM? " + dapatSim);
+
 // Soal 4.2 (Studi Kasus: Autentikasi Login Akun Ujian - Operator &&):
 // Seorang siswa hanya dapat login ke ruang ujian jika username bernilai "siswa10A" DAN token bernilai "PAS2026".
 // Jika seorang siswa menginput username = "siswa10A" dan token = "PAS2025", tentukan apakah status login berhasil menggunakan operator &&!
+
+let usernameInput = "siswa10A";
+let tokenInput = "PAS2025";
+
+let loginBerhasil = (usernameInput === "siswa10A") && (tokenInput === "PAS2026");
+console.log("Apakah login berhasil? " + loginBerhasil);
 
 // Soal 4.3 (Studi Kasus: Tiket Masuk Edupark - Operator ||):
 // Wahana wisata edukasi memberikan tiket masuk gratis jika pengunjung berusia balita (kurang dari 5 tahun) ATAU berstatus penyandang disabilitas (isDisabilitas = true).
 // Jika seorang pengunjung berusia 4 tahun dan isDisabilitas = false, tentukan apakah pengunjung tersebut mendapatkan tiket gratis menggunakan operator ||!
 
+let usiaPengunjung = 4;
+let isDisabilitas = false;
+
+let dapatTiketGratis = (usiaPengunjung < 5) || isDisabilitas;
+console.log("Apakah pengunjung mendapatkan tiket gratis? " + dapatTiketGratis);
+
 // Soal 4.4 (Studi Kasus: Sistem Keamanan Laboratorium Komputer - Operator !):
 // Alarm pengaman pintu lab akan menyala jika status pintu TIDAK terkunci (!isTerkunci).
 // Jika saat ini variabel `isTerkunci` bernilai false (artinya pintu terbuka), tentukan apakah alarm berbunyi menggunakan operator NOT (!)!
+
+let isTerkunci = false;
+let alarmBerbunyi = !isTerkunci;
+console.log("Apakah alarm berbunyi? " + alarmBerbunyi);
 
 // Soal 4.5 (Studi Kasus: Beasiswa Prestasi Sekolah - Kombinasi &&, ||, !):
 // Santri berhak menerima beasiswa jika:
@@ -241,6 +272,12 @@ console.log(skorA !== skorB);
 // DAN santri tersebut TIDAK sedang menjalani sanksi pelanggaran asrama (!kenaSanksi).
 // Jika Ahmad memiliki nilai ujian 92, juaraTahfidz = false, dan kenaSanksi = false, tentukan apakah Ahmad berhak menerima beasiswa!
 
+let nilaiUjianAhmad = 92;
+let juaraTahfidz = false;
+let kenaSanksi = false;
+
+let berhakBeasiswa = ((nilaiUjianAhmad >= 90) || juaraTahfidz) && !kenaSanksi;
+console.log("Apakah Ahmad berhak menerima beasiswa? " + berhakBeasiswa);
 
 // ==============================================================================
 // BAGIAN 5: PERTEMUAN 5 (Unary, Percabangan if, if-else, if-else if, dan switch-case)
@@ -251,10 +288,24 @@ console.log(skorA !== skorB);
 // Lakukan proses pemanggilan berikutnya dengan increment (`++`), lalu tampilkan nilainya.
 // Setelah itu, karena ada 1 orang yang membatalkan nomor antrean, lakukan decrement (`--`), lalu tampilkan nilainya!
 
+let nomorAntrean = 15;
+nomorAntrean++;
+console.log("Nomor antrean setelah increment: " + nomorAntrean);
+
+nomorAntrean--;
+console.log("Nomor antrean setelah decrement: " + nomorAntrean);
+
 // Soal 5.2 (Studi Kasus: Pengecekan KKM Ujian - if - else):
 // Diberikan variabel `nilaiUjian` = 73.
 // Jika nilai minimal 75, tampilkan ke console: "Tuntas: Selamat, Anda Lulus KKM!".
 // Selain itu, tampilkan: "Belum Tuntas: Silakan mengikuti remedial pekan depan!".
+
+let nilaiUjian = 73;
+if (nilaiUjian >= 75) {
+    console.log("Tuntas: Selamat, Anda Lulus KKM!");
+} else {
+    console.log("Belum Tuntas: Silakan mengikuti remedial pekan depan!");
+}
 
 // Soal 5.3 (Studi Kasus: Klasifikasi Nilai Raport - if - else if - else):
 // Diberikan variabel `skorAkhir` = 83.
@@ -265,12 +316,32 @@ console.log(skorA !== skorB);
 // - Selain itu, predikat = "D (Perlu Bimbingan)"
 // Cetak predikat akhir ke console!
 
+let skorAkhir = 83;
+if (skorAkhir >= 90) {
+    console.log("Predikat: A (Sangat Baik)");
+} else if (skorAkhir >= 80) {
+    console.log("Predikat: B (Baik)");
+} else if (skorAkhir >= 70) {
+    console.log("Predikat: C (Cukup)");
+} else {
+    console.log("Predikat: D (Perlu Bimbingan)");
+}
+
 // Soal 5.4 (Studi Kasus: Sensor Pendeteksi Angka - Ganjil, Genap, atau Nol):
 // Diberikan variabel `bilangan` = 14.
 // Buat kondisi percabangan:
 // - Jika bilangan === 0, cetak "Bilangan Nol"
 // - Jika sisa bagi bilangan dengan 2 adalah 0 (`bilangan % 2 === 0`), cetak "Bilangan Genap"
 // - Selain itu, cetak "Bilangan Ganjil"!
+
+let bilangan = 14;
+if (bilangan === 0) {
+    console.log("Bilangan Nol");
+} else if (bilangan % 2 === 0) {
+    console.log("Bilangan Genap");
+} else {
+    console.log("Bilangan Ganjil");
+}
 
 // Soal 5.5 (Studi Kasus: Menu Hari Piket Asrama - switch - case):
 // Diberikan variabel `nomorHari` = 3 (1 = Senin, 2 = Selasa, 3 = Rabu, 4 = Kamis, 5 = Jum'at, 6 = Sabtu, 7 = Ahad).
@@ -280,12 +351,45 @@ console.log(skorA !== skorB);
 // - case 7: Tampilkan "Hari Kunjungan Orang Tua dan Istirahat"
 // - default: Tampilkan "Nomor hari tidak valid (masukkan angka 1 - 7)"!
 
+let nomorHari = 3;
+switch (nomorHari) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+        console.log("Hari Sekolah dan Kegiatan Belajar");
+        break;
+    case 6:
+        console.log("Hari Olahraga dan Kerja Bakti Lingkungan");
+        break;
+    case 7:
+        console.log("Hari Kunjungan Orang Tua dan Istirahat");
+        break;
+    default:
+        console.log("Nomor hari tidak valid (masukkan angka 1 - 7)");
+}
+
 // Soal 5.6 (Studi Kasus: Pengelompokan Kategori Makanan Sehat - switch case grouping):
 // Diberikan variabel `pilihanMakanan` = "salad".
 // Gunakan switch case dengan pengelompokan (grouping case):
 // - Jika "salad" atau "jus buah" -> Tampilkan: "Pilihan Sangat Sehat: Kaya Nutrisi dan Vitamin!"
 // - Jika "burger" atau "gorengan" -> Tampilkan: "Pilihan Kurang Sehat: Batasi konsumsi minyak dan lemak!"
 // - default -> Tampilkan: "Menu makanan tidak terdaftar di database kantin sehat."
+
+let pilihanMakanan = "salad";
+switch (pilihanMakanan) {
+    case "salad":
+    case "jus buah":
+        console.log("Pilihan Sangat Sehat: Kaya Nutrisi dan Vitamin!");
+        break;
+    case "burger":
+    case "gorengan":
+        console.log("Pilihan Kurang Sehat: Batasi konsumsi minyak dan lemak!");
+        break;
+    default:
+        console.log("Menu makanan tidak terdaftar di database kantin sehat.");
+}   
 
 
 // ==============================================================================
@@ -296,10 +400,22 @@ console.log(skorA !== skorB);
 // Gunakan for loop untuk menampilkan hitungan mundur dari angka 10 sampai 1 ke console.
 // Tepat setelah perulangan selesai, tampilkan pesan: "Roket Sains Berhasil Meluncur ke Angkasa!"!
 
+let hitungMundur = 10;
+for (let i = hitungMundur; i >= 1; i--) {
+    console.log(i);
+}
+console.log("Roket Sains Berhasil Meluncur ke Angkasa!");
+
 // Soal 6.2 (Studi Kasus: Pemanggilan Barisan Siswa Bernomor Ganjil - for loop & modulus):
 // Guru memanggil siswa dengan nomor urut 1 sampai 15. Namun, guru hanya ingin memanggil siswa yang memiliki nomor urut GANJIL.
 // Gunakan for loop dan seleksi kondisi modulus (i % 2 !== 0) untuk menampilkan:
 // "Memanggil siswa nomor urut: [i]" ke console!
+
+for (let i = 1; i <= 15; i++) {
+    if (i % 2 !== 0) {
+        console.log("Memanggil siswa nomor urut: " + i);
+    }
+}   
 
 // Soal 6.3 (Studi Kasus: Inspeksi Armada Mobil Sekolah - for loop dengan kondisi bertingkat):
 // Sekolah memiliki 10 mobil dinas (nomor 1 sampai 10).
@@ -308,6 +424,16 @@ console.log(skorA !== skorB);
 // - Jika mobil nomor 8: Tampilkan "Mobil 8 sedang dipinjam untuk keperluan dinas luar"
 // - Selain itu: Tampilkan "Mobil [nomor] siap beroperasi mengantar santri"!
 
+for (let i = 1; i <= 10; i++) {
+    if (i === 4) {
+        console.log("Mobil 4 sedang berada di bengkel untuk servis rutin");
+    } else if (i === 8) {
+        console.log("Mobil 8 sedang dipinjam untuk keperluan dinas luar");
+    } else {
+        console.log("Mobil " + i + " siap beroperasi mengantar santri");
+    }
+}
+
 // Soal 6.4 (Studi Kasus: Pengisian Galon Air Asrama - while loop):
 // Volume awal air galon adalah 0 liter (variabel `volumeAir = 0`).
 // Kapasitas maksimum galon adalah 5 liter.
@@ -315,12 +441,25 @@ console.log(skorA !== skorB);
 // Cetak setiap penambahan liter ke console: "Mengisi air... saat ini volume: [volumeAir] Liter".
 // Di luar loop, cetak: "Galon sudah terisi penuh!"!
 
+let volumeAir = 0;
+while (volumeAir < 5) {
+    volumeAir++;
+    console.log("Mengisi air... saat ini volume: " + volumeAir + " Liter");
+}
+console.log("Galon sudah terisi penuh!");
+
 // Soal 6.5 (Studi Kasus: Pemanasan Mesin Generator Listrik - do...while loop):
 // Generator cadangan asrama harus melakukan pemanasan mesin minimal 1 kali putaran uji coba meskipun indikator `daya` awalnya bernilai 10.
 // Buat variabel `daya = 10`.
 // Gunakan `do...while` loop untuk mencetak "Mesin generator berhasil diuji pada putaran daya ke-[daya]" lalu naikkan daya (daya++),
 // dengan kondisi while `daya < 10` (kondisi langsung bernilai false).
 // Buktikan bahwa blok di dalam do tetap dijalankan minimal 1 kali!
+
+let daya = 10;
+do {
+    console.log("Mesin generator berhasil diuji pada putaran daya ke-" + daya);
+    daya++;
+} while (daya < 10);
 
 
 // ==============================================================================
@@ -333,6 +472,12 @@ console.log(skorA !== skorB);
 // "Teng! Teng! Teng! Waktu belajar di kelas 10A telah dimulai. Harap tertib!"
 // Panggil function tersebut 1 kali untuk mengujinya!
 
+function bunyikanBelSekolah() {
+    console.log("Teng! Teng! Teng! Waktu belajar di kelas 10A telah dimulai. Harap tertib!");
+}
+
+bunyikanBelSekolah();
+
 // Soal 7.2 (Studi Kasus: Mesin Kasir Mini - Function Parameter Aritmatika):
 // Buat 4 buah function yang masing-masing menerima dua parameter (a, b):
 // 1. `tambah(a, b)` -> mencetak hasil penjumlahan a + b
@@ -340,6 +485,27 @@ console.log(skorA !== skorB);
 // 3. `kali(a, b)`   -> mencetak hasil perkalian a * b
 // 4. `bagi(a, b)`   -> mencetak hasil pembagian a / b
 // Ujilah masing-masing function tersebut dengan angka contoh bebas (misal a = 20, b = 5)!
+
+function tambah(a, b) {
+    console.log(a + b);
+}
+
+function kurang(a, b) {
+    console.log(a - b);
+}
+
+function kali(a, b) {
+    console.log(a * b);
+}
+
+function bagi(a, b) {
+    console.log(a / b);
+}
+
+tambah(20, 5);
+kurang(20, 5);
+kali(20, 5);
+bagi(20, 5);
 
 // Soal 7.3 (Studi Kasus: Putaran Lari Pagi - Function dengan Default Parameter):
 // Buat sebuah function bernama `lariKelilingLapangan(jumlahPutaran = 3)`.
@@ -349,12 +515,34 @@ console.log(skorA !== skorB);
 // 1. Panggil `lariKelilingLapangan()` tanpa mengirimkan argumen (akan menjalankan default 3 putaran).
 // 2. Panggil `lariKelilingLapangan(5)` dengan mengirimkan argumen 5 putaran!
 
+function lariKelilingLapangan(jumlahPutaran = 3) {
+    for (let i = 1; i <= jumlahPutaran; i++) {
+        console.log("Lari putaran ke-" + i + " selesai!");
+    }
+}
+
+lariKelilingLapangan();
+lariKelilingLapangan(5);
+
 // Soal 7.4 (Studi Kasus: Konsultan Desain Lapangan - Function Rumus Bangun Datar):
 // Buat dua buah function perhitungan bangun datar:
 // 1. `hitungLuasPersegiPanjang(panjang, lebar)`: Menghitung luas (panjang * lebar), lalu cetak hasilnya ke console!
 // 2. `hitungLuasSegitiga(alas, tinggi)`: Menghitung luas segitiga ((alas * tinggi) / 2), lalu cetak hasilnya ke console!
 // Uji function persegi panjang dengan panjang = 10 dan lebar = 6.
 // Uji function segitiga dengan alas = 12 dan tinggi = 8!
+
+function hitungLuasPersegiPanjang(panjang, lebar) {
+    let luas = panjang * lebar;
+    console.log("Luas Persegi Panjang: " + luas);
+}
+
+function hitungLuasSegitiga(alas, tinggi) {
+    let luas = (alas * tinggi) / 2;
+    console.log("Luas Segitiga: " + luas);
+}
+
+hitungLuasPersegiPanjang(10, 6);
+hitungLuasSegitiga(12, 8);      
 
 // Soal 7.5 (Studi Kasus Terpadu: Program Kasir Diskon Koperasi Sekolah):
 // Buat sebuah function terpadu bernama `hitungTotalKoperasi(namaPelanggan, totalBelanja, isMember)`.
@@ -367,6 +555,23 @@ console.log(skorA !== skorB);
 // Uji fungsi dengan 2 skenario:
 // 1. hitungTotalKoperasi("Azzam", 120000, true)
 // 2. hitungTotalKoperasi("Baim", 80000, false)
+
+function hitungTotalKoperasi(namaPelanggan, totalBelanja, isMember) {
+    let totalBayar;
+    if (isMember) {
+        if (totalBelanja >= 100000) {
+            totalBayar = totalBelanja * 0.85;
+        } else {
+            totalBayar = totalBelanja * 0.95;
+        }
+    } else {
+        totalBayar = totalBelanja;
+    }
+    console.log(`Pelanggan: ${namaPelanggan} | Member: ${isMember} | Total Akhir: Rp ${totalBayar}`);
+}
+
+hitungTotalKoperasi("Azzam", 120000, true);
+hitungTotalKoperasi("Baim", 80000, false);
 
 
 // ==============================================================================
