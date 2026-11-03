@@ -515,14 +515,6 @@ bagi(20, 5);
 // 1. Panggil `lariKelilingLapangan()` tanpa mengirimkan argumen (akan menjalankan default 3 putaran).
 // 2. Panggil `lariKelilingLapangan(5)` dengan mengirimkan argumen 5 putaran!
 
-function lariKelilingLapangan(jumlahPutaran = 3) {
-    for (let i = 1; i <= jumlahPutaran; i++) {
-        console.log("Lari putaran ke-" + i + " selesai!");
-    }
-}
-
-lariKelilingLapangan();
-lariKelilingLapangan(5);
 
 // Soal 7.4 (Studi Kasus: Konsultan Desain Lapangan - Function Rumus Bangun Datar):
 // Buat dua buah function perhitungan bangun datar:
@@ -530,19 +522,6 @@ lariKelilingLapangan(5);
 // 2. `hitungLuasSegitiga(alas, tinggi)`: Menghitung luas segitiga ((alas * tinggi) / 2), lalu cetak hasilnya ke console!
 // Uji function persegi panjang dengan panjang = 10 dan lebar = 6.
 // Uji function segitiga dengan alas = 12 dan tinggi = 8!
-
-function hitungLuasPersegiPanjang(panjang, lebar) {
-    let luas = panjang * lebar;
-    console.log("Luas Persegi Panjang: " + luas);
-}
-
-function hitungLuasSegitiga(alas, tinggi) {
-    let luas = (alas * tinggi) / 2;
-    console.log("Luas Segitiga: " + luas);
-}
-
-hitungLuasPersegiPanjang(10, 6);
-hitungLuasSegitiga(12, 8);      
 
 // Soal 7.5 (Studi Kasus Terpadu: Program Kasir Diskon Koperasi Sekolah):
 // Buat sebuah function terpadu bernama `hitungTotalKoperasi(namaPelanggan, totalBelanja, isMember)`.
@@ -555,23 +534,6 @@ hitungLuasSegitiga(12, 8);
 // Uji fungsi dengan 2 skenario:
 // 1. hitungTotalKoperasi("Azzam", 120000, true)
 // 2. hitungTotalKoperasi("Baim", 80000, false)
-
-function hitungTotalKoperasi(namaPelanggan, totalBelanja, isMember) {
-    let totalBayar;
-    if (isMember) {
-        if (totalBelanja >= 100000) {
-            totalBayar = totalBelanja * 0.85;
-        } else {
-            totalBayar = totalBelanja * 0.95;
-        }
-    } else {
-        totalBayar = totalBelanja;
-    }
-    console.log(`Pelanggan: ${namaPelanggan} | Member: ${isMember} | Total Akhir: Rp ${totalBayar}`);
-}
-
-hitungTotalKoperasi("Azzam", 120000, true);
-hitungTotalKoperasi("Baim", 80000, false);
 
 
 // ==============================================================================
